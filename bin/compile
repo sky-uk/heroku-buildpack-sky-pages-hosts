@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Adding local.thebiggerpicture.sky"
+echo "127.0.0.1 local.thebiggerpicture.sky" >> ~/etc/hosts
+
+echo "✓ Added hosts."
