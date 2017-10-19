@@ -10,4 +10,4 @@ A Heroku buildpack for setting additional hosts allowing heroku to run functiona
 
 Add the buildpack to your Heroku app either using the CLI or the Heroku dashboard.
 
-    $ heroku buildpacks:set --index 1 https://github.com/sky-uk/heroku-buildpack-sky-pages-hosts.git
+    $ heroku buildpacks:add https://github.com/sky-uk/heroku-buildpack-sky-pages-hosts.git
