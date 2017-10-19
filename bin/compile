@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-echo "Adding local.thebiggerpicture.sky"
-echo "127.0.0.1 local.thebiggerpicture.sky" >> ~/etc/hosts
+array=(`echo DOMAIN_ROUTING_HOSTNAMES | sed 's/,/\n/g'`)
+
+for item in ${array[@]};
+do
+    `echo "Adding $item"`
+    `echo "127.0.0.1 $item" >> ~/etc/hosts`
+done
 
 echo "✓ Added hosts."
