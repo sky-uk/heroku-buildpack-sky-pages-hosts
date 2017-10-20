@@ -17,10 +17,6 @@ request](#pull-requests). We’d love to see your contributions.
 
 ## Git Workflow
 
-With Toolkit being an open source project, we need to take greater care than
-ever with our Git workflow and strategy. Please follow the below instructions
-very closely.
-
 **N.B.** If you fail to adhere to the agreed workflow, there is a risk that your
 Pull Requests may not be accepted until any issues are rectified.
 
@@ -134,7 +130,7 @@ _Tabs navigation width issue with many tabs_.
 6. Now your commits—based on the template—should resemble this:
 
         commit 1dcf5d4bc18d5fd3321f4c60d879cfd5d5e2dd1f
-        Author: Harry Roberts <csswizardry@gmail.com>
+        Author: Bob Smith <bob@smith.com>
         Date:   Wed, 21 Jun 2017 10:08:36 +0100
 
             [refs #00224] Add Git workflow documentation
@@ -145,10 +141,10 @@ _Tabs navigation width issue with many tabs_.
 
 ### Why?
 
-A more formalised and strict Git strategy means that
+A more formalised Git strategy means that
 
 1. **We’ll have a nice, clean, respectable public history.** There’s a lot of
-   great work in Toolkit; we should be equally proud of our log of it.
+   great work in our open source projects; we should be equally proud of our log of it.
 2. **Grepping logs for work pertaining to specific issues becomes trivial.** If
    we wanted to see all of the commits that are related to a specific body of
    work, it’s now as simple as:
@@ -162,9 +158,6 @@ A more formalised and strict Git strategy means that
 
 ## Pull Requests
 
-For new design features, please see the [Design Contribution]
-(#design-contributions) guidelines before continuing.
-
 1. Create a new local branch for your work.
     * This branch should be named `hbp-<issue numner>`, e.g. `hbp-00215`,
       `hbp-00087`, `hbp-01209`.
@@ -175,11 +168,8 @@ For new design features, please see the [Design Contribution]
 3. Once any conflicts have been fixed and you’re ready for your code to be
    reviewed, remove the `in progress` label and add `reviews needed`.
 4. Request a code review from two or more developers.
-    * You’ll need at least **two** approvals on the pull request before being
-      able to merge, and **one of these approvals must be from a [core
-      maintainer](https://github.com/sky-uk/sky-pages#maintainers)**.
-    * **N.B.** For major/breaking changes, you require **two core maintainer
-       approvals**.
+    * You will need an approvals on the pull request before being
+      able to merge.
 5. If your PR contains more than a few commits, consider rebasing them into
    something more concise.
 
@@ -194,8 +184,7 @@ For new design features, please see the [Design Contribution]
             13407f8 [refs #00297] Tweak sizing
             c9a0dd1 [refs #00297] Further Amends
             2ffdc23 [refs #00297] Amends
-            c21d4eb [refs #00297] Colour change
-            c3fee40 [refs #00297] New component
+            c21d4eb [refs #00297] Slight tweak
             5471986 Publish
 
       * In this case, Fixup/Squash your commits via `git rebase -i 5471986`
@@ -204,14 +193,8 @@ For new design features, please see the [Design Contribution]
             c3fee40 [refs #00297] New component
             5471986 Publish
 
-6. One of the [core maintainers](https://github.com/sky-uk/sky-pages#maintainers)
-   will merge the changes and apply appropriate versioning to release (see
-   below).
-
-## Discussion
-
-For discussion of issues and general project talk, head over to
-[#sky-pages](http://sky.slack.com/messages/sky-pages) on Slack.
+6. One of the [core maintainers](https://github.com/sky-uk/heroku-buildpack-sky-pages-hosts#champions) will merge the changes and apply appropriate
+   versioning to release (see below).
 
 ---
 
@@ -230,12 +213,8 @@ For discussion of issues and general project talk, head over to
 
 ### Contributions
 
-* Every core maintainer will complete 1 ticket per month.
 * Work is done in priority order according to the
    [backlog](https://github.com/sky-uk/heroku-buildpack-sky-pages-hosts/projects/1).
-
-If you feel like you can’t meet these responsibilities, please contact one of
-the core maintainers or [Tom Davidson](@tom-davidson).
 
 ## Releases
 
@@ -248,11 +227,6 @@ the core maintainers or [Tom Davidson](@tom-davidson).
 4. Run `git checkout master && git pull && lerna bootstrap`.
 5. Run `git merge develop`.
 6. Include all new functional changes in the appropriate `CHANGELOG.md`(s).
-    * Pro tip: use the following command to get a commit summary of changes.
-
-        ```
-        $ git log --oneline <last tag>.. -- packages/sky-toolkit-[core|ui]/
-        ```
 7. Commit and push the `CHANGELOG.md` changes to `master`.
 8. Go to [Hosts Buildpack/Releases](https://github.com/sky-uk/heroku-buildpack-sky-pages-hosts/releases), and
     check the tag exists.
