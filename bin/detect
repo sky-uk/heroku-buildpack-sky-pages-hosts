@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-echo "Add custom hosts"
-
-exit 0
+if [ -f DOMAIN_ROUTING_HOSTNAMES ]; then
+  echo "Add custom hosts" && exit 0
+else
+  echo "no hosts to add" && exit 1
+fi
